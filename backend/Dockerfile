@@ -6,7 +6,7 @@ WORKDIR /app/backend
 
 # Install Python dependencies
 COPY ./requirements /app/backend/requirements
-RUN pip install -r requirements/development.txt
+RUN pip --default-timeout 600 install -r requirements/development.txt
 
 # Add the rest of the code
 COPY . /app/backend
